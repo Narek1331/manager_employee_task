@@ -2,6 +2,7 @@
 namespace App\Services;
 
 use App\Models\User;
+use App\Models\Role;
 
 class UserService{
 
@@ -29,6 +30,14 @@ class UserService{
      */
     public function getMeInfo($id){
         return User::with('role')->find($id);
+    }
+
+    /**
+     * Get all employee users.
+     */
+    public function getEmployeeUsers(){
+        $employee_role = Role::where('name','employee')->first();
+        return User::select(['name','email','id'])->where('role_id',$employee_role->id)->get();
     }
 }
 

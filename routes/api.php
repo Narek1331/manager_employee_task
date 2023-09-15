@@ -5,6 +5,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\TaskController;
 use App\Http\Controllers\API\TaskCommentController;
 use App\Http\Controllers\API\TaskStatusController;
+use App\Http\Controllers\API\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,4 +61,13 @@ Route::group([
         Route::patch('/', [TaskStatusController::class,'edit']);
     });
 
+});
+
+Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'user'
+
+], function ($router) {
+    Route::get('/employee', [UserController::class,'getEmployees'])->middleware('user_role:manager');
 });

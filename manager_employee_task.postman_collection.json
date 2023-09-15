@@ -249,6 +249,32 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "get employee users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjk0NzcxMjgyLCJleHAiOjE2OTQ3NzQ4ODIsIm5iZiI6MTY5NDc3MTI4MiwianRpIjoicXVwQVdkSUt5SGpWcVhsUiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Zj1LilNAa9AhlEoXquKyTArjXY25lzyZ9a4F3aiQeAs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/api/user/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"user",
+						"employee"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

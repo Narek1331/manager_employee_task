@@ -10,7 +10,7 @@ class TaskService{
      * Get all tasks.
      */
     public function all(){
-        return Task::with(['owner','employee','comments','status'])->get();
+        return Task::with(['owner','employee','comments','status'])->orderBy('created_at','desc')->get();
     }
 
     /**
